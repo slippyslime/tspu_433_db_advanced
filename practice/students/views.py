@@ -23,7 +23,6 @@ class FacultyDetailView(DetailView):
     context_object_name = 'faculty'
 
 class GroupDetailView(DetailView):
-    print(Group.objects.order_by('id'))
     model = Group
     template_name = 'students/details_schedule.html'
     context_object_name = 'group'

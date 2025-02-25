@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Расписание{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Расписание занятий</h1>
+
+        {% for element in data %}
+            <div class="alert alert-warning">
+                <h3>{{ element }}</h3>
+                <p>Староста группы: {{ element.Headman }}</p>
+                <p>Специальность: {{ element.Specialty }}</p>
+                <p>{{ element.Faculty }}</p>
+                <a href="{% url 'schedule-detail' element.id %}" class="btn btn-warning">Смотреть расписание</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

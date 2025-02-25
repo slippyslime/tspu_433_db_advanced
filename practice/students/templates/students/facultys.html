@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Факультеты{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Факультеты нашего Университета</h1>
+
+        {% for element in data %}
+            <div class="alert alert-warning">
+                <h3>{{ element }}</h3>
+                <p>Декан факультета: {{ element.Headmaster }}</p>
+                <p>Номер кабинета: {{ element.Cabinet }}</p>
+                <p>Тел. для обращений: {{ element.Number_phone }}</p>
+                <a href="{% url 'faculty-detail' element.id %}" class="btn btn-warning">Смотреть направления</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
